@@ -7,7 +7,31 @@
 </head>
 <body>
     <div>
-        Ide alkosson Jani
+    <strong>
+    Ez a numanal házi első feladata :(
+        function [a0,a1,a2,a3]=CubicRegression(x,y)
+        l=length(x);
+        A=zeros(l,4);
+        z=transpose(y);
+        for i = 1:l
+            for j = 1:4
+                A(i,j)=x(i)^(j-1);
+            end
+        end
+        B=transpose(A);
+        C=mtimes(B,A);
+        d=mtimes(B,z);
+        a=linsolve(C,d);
+        a0=a(1);
+        a1=a(2);
+        a2=a(3);
+        a3=a(4);
+        f=a(1)+a(2)*x+a(3)*x.^2+a(4)*x.^3;
+        plot(x,y,'o',x,f)
+        title('Cubic Regression')
+
+        end
+    </strong>
     </div>
     <div>
         Ide alkosson Ábel
